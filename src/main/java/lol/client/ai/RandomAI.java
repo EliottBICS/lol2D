@@ -15,6 +15,7 @@ public class RandomAI extends AIBase {
   public Turn championSelect() {
     Turn turn = new Turn();
     String championName;
+    //TODO Champion diversity
     switch(teamID) {
       case Nexus.BLUE: championName = "Warrior"; break;
       case Nexus.RED: championName = "Scientist"; break;
@@ -22,7 +23,7 @@ public class RandomAI extends AIBase {
     }
     turn.registerAction(new ChampionSelect(teamID, championName));
     turn.registerAction(new ChampionSelect(teamID, "Warrior"));
-    turn.registerAction(new ChampionSelect(teamID, "Archer"));
+    turn.registerAction(new ChampionSelect(teamID, "Scientist"));
     return turn;
   }
 
